@@ -244,7 +244,7 @@ label{
     min-height: calc(100vh - 280px);
     margin: 0 auto;
     z-index: -1;
-    background-image: url('/GPA Calculator/bg.jpg'); /* Replace with the path to your image */
+    background-image: url('/bg.jpg'); /* Replace with the path to your image */
     background-size: cover; /* Ensures the image covers the entire section */
     background-position: center; /* Centers the image */
     border-radius:0 0 1.2rem 1.2rem;
