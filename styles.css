@@ -182,7 +182,10 @@ select {
     background-color: #FFFFFF;
     padding: 2rem;
     border-radius: 0 0.8rem 0.8rem 0;
+<<<<<<< HEAD
     
+=======
+>>>>>>> 3e2765493c68531662e29de43fb0b5534085c8c6
     box-shadow: 0 0.5rem 1rem rgba(7,29,63,0.125);
 }
 .text{
@@ -243,8 +246,12 @@ label{
     width: 100%;
     min-height: calc(100vh - 280px);
     margin: 0 auto;
+<<<<<<< HEAD
     /* z-index: -1; */
     background-image: url('/GPA Calculator/bg.jpg'); /* Replace with the path to your image */
+=======
+    background-image: url('/bg.jpg'); /* Replace with the path to your image */
+>>>>>>> 3e2765493c68531662e29de43fb0b5534085c8c6
     background-size: cover; /* Ensures the image covers the entire section */
     background-position: center; /* Centers the image */
     border-radius:0 0 1.2rem 1.2rem;
