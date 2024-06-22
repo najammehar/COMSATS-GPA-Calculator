@@ -98,6 +98,7 @@ select {
     line-height: 1.5;
     font-weight: 700;
     margin-bottom: 1rem;
+    color: #1E1F4A;
 }
 .course {
     max-width: 100%;
@@ -444,7 +445,7 @@ footer{
     border: none;
     font-size: 24px;
     cursor: pointer;
-    color: black;
+    color: #1E1F4A;
 }
 #feedbackForm {
     margin-top: 3rem;
