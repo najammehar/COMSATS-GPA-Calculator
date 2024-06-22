@@ -376,8 +376,7 @@ footer{
     position: relative;
 }
 
-.tooltip-icon::before {
-    content: attr(data-tooltip);
+.tooltip {
     position: absolute;
     bottom: 100%;
     left: 50%;
@@ -393,11 +392,8 @@ footer{
     font-size: 1.2rem;
     z-index: 10;
     width: max-content;
+    height: max-content;
     text-align: center;
-}
-
-.tooltip-icon:hover::before {
-    opacity: 1;
 }
 
 .qt{

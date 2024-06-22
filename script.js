@@ -163,7 +163,7 @@ $(document).ready(function() {
             <p class="text mb-1">Based on COMSATS' GPA policy, this calculator lets you enter course details, GPA, and credits for instant results.</p>
             <p class="result mb-1">Detailed Result</p>
             <p class="text mb-1">Total Credit Hours: ${totalCredits}</p>
-            <p class="text mb-1">Total Points: ${totalPoints.toFixed(2)}</p>
+            <p class="text mb-1">Honor Points: ${totalPoints.toFixed(2)}</p>
             <p class="text mb-1">GPA: ${gpaResult}</p>
             <hr>
             <p class="text mt-1">${remarks}</p>
@@ -173,10 +173,10 @@ $(document).ready(function() {
             <p class="text mb-1">Based on COMSATS' GPA policy, this calculator lets you enter course details, GPA, and credits for instant results.</p>
             <p class="result mb-1">Detailed Result</p>
             <p class="text mb-1">Total Credit Hours: 0</p>
-            <p class="text mb-1">Total Points: 0.00</p>
+            <p class="text mb-1">Honor Points: 0.00</p>
             <p class="text mb-1">GPA: 0.00</p>
             <hr>
-            <p class="text mt-1"></p>
+            <p class="text mt-1">No remarks</p>
         `)
         }
     }
@@ -241,7 +241,7 @@ $(document).ready(function() {
             $('.required-gpa-instruction').html(`
                 <p class="text mb-1">Determine the minimum GPA needed in future courses to raise or maintain your desired GPA level.</p>
                 <p class="result mb-1">Detailed Result</p>
-                <p class="text mb-1">Desired GPA: ${targetGPA}</p>
+                <p class="text mb-1">Desired CGPA: ${targetGPA}</p>
                 <p class="text mb-1">Current CGPA: ${currentCGPA}</p>
                 <p class="text mb-1">Additional Credits: ${targetCredits}</p>
                 <p class="text mb-1" style="color:#FF0000;">Required GPA: Not Possible</p>
@@ -258,7 +258,7 @@ $(document).ready(function() {
             $('.required-gpa-instruction').html(`
                 <p class="text mb-1">Determine the minimum GPA needed in future courses to raise or maintain your desired GPA level.</p>
                 <p class="result mb-1">Detailed Result</p>
-                <p class="text mb-1">Desired GPA: ${targetGPA}</p>
+                <p class="text mb-1">Desired CGPA: ${targetGPA}</p>
                 <p class="text mb-1">Current CGPA: ${currentCGPA}</p>
                 <p class="text mb-1">Additional Credits: ${targetCredits}</p>
                 <p class="text mb-1">Required GPA: 0</p>
@@ -308,9 +308,6 @@ $(document).ready(function() {
     $('#calculate-required-gpa').click(function() {
         if (validateInputs()) {
             calculateRequiredGPA(); }
-        // } else {
-        //     alert("Please enter valid values in the fields.");
-        // }
     });
 
 // Function to show GPA Calculator and scroll to top
@@ -394,6 +391,45 @@ $('#calculator-type').change(function() {
         }, function(error) {
             console.log('Error sending email:', error);
             alert('Error sending feedback. Please try again later.');
+        });
+    });
+    
+    $('.tooltip-icon').on('mouseenter', function() {
+        var $icon = $(this);
+        var tooltipText = $icon.data('tooltip');
+        var $tooltip = $('<div class="tooltip"></div>').text(tooltipText);
+
+        $('body').append($tooltip);
+
+        var iconOffset = $icon.offset();
+        var tooltipWidth = $tooltip.outerWidth();
+        var tooltipHeight = $tooltip.outerHeight();
+
+        var tooltipLeft = iconOffset.left + $icon.outerWidth() / 2 - tooltipWidth / 2;
+        var tooltipTop = iconOffset.top - tooltipHeight;
+
+        $tooltip.css({
+            top: tooltipTop,
+            left: tooltipLeft,
+            opacity: 1
+        });
+
+        // Adjust position if the tooltip goes out of viewport
+        if ($tooltip.offset().top < 0) {
+            $tooltip.css('top', iconOffset.top + $icon.outerHeight());
+        }
+        if ($tooltip.offset().left < 0) {
+            $tooltip.css('left', 0);
+        }
+        if ($tooltip.offset().left + tooltipWidth > $(window).width()) {
+            $tooltip.css('left', $(window).width() - tooltipWidth);
+        }
+        if ($tooltip.offset().top + tooltipHeight > $(window).height()) {
+            $tooltip.css('top', iconOffset.top - tooltipHeight);
+        }
+
+        $icon.on('mouseleave', function() {
+            $tooltip.remove();
         });
     });
 });
