@@ -183,28 +183,60 @@ $(document).ready(function() {
     
 
 
-    // Function to calculate required GPA for target CGPA
-    $('#calculate-required-gpa').click(function() {
+    function showErrorMessage(inputId, message) {
+        $(`#${inputId}-error`).text(message).css('color', 'red');
+    }
+
+    function clearErrorMessage(inputId) {
+        $(`#${inputId}-error`).text('');
+    }
+
+    function validateField(fieldId, min, max) {
+        let value = parseFloat($(`#${fieldId}`).val());
+        if(fieldId === 'current-cgpa' || fieldId === 'target-gpa'){
+        if (value === null || (value >= min && value <= max)) {
+            clearErrorMessage(fieldId);
+            return true;
+        } else {
+            showErrorMessage(fieldId, `Please enter a valid value between ${min} and ${max}.`);
+            return false;
+        }
+    } else{
+        if (isNaN(value) || value <= min) {
+            showErrorMessage(fieldId, `Please enter a value greater than ${min}`);
+            return false;
+        } else {
+            clearErrorMessage(fieldId);
+            return true;
+        }
+    }
+    }
+
+    function validateInputs() {
+        let isCurrentCGPAValid = validateField('current-cgpa', 0, 4);
+        let isCurrentCreditsValid = validateField('current-credits', 0, Infinity);
+        let isTargetGPAValid = validateField('target-gpa', 0, 4);
+        let isTargetCreditsValid = validateField('target-credits', 0, Infinity);
+
+        return isCurrentCGPAValid && isCurrentCreditsValid && isTargetGPAValid && isTargetCreditsValid;
+    }
+
+    function calculateRequiredGPA() {
         let currentCGPA = parseFloat($('#current-cgpa').val());
         let currentCredits = parseFloat($('#current-credits').val());
         let targetGPA = parseFloat($('#target-gpa').val());
         let targetCredits = parseFloat($('#target-credits').val());
-    
-        if (isNaN(currentCGPA) || isNaN(currentCredits) || isNaN(targetGPA) || isNaN(targetCredits)) {
-            alert("Please fill in all fields with valid numbers.");
-            return;
-        }
-    
+
         let totalCurrentPoints = currentCGPA * currentCredits;
         let totalTargetPoints = targetGPA * (currentCredits + targetCredits);
         let requiredGPA = ((totalTargetPoints - totalCurrentPoints) / targetCredits).toFixed(2);
-    
+
         if (requiredGPA > 4) {
             $('#required-gpa-result').text("Not Possible");
             requiredBar.set(1); // Fill the bar to 100%
             requiredBar.text.style.color = '#FF0000'; // Change text color to red
             requiredBar.text.innerHTML = 'Not Possible';
-    
+
             // Update Required GPA instructions for "Not Possible"
             $('.required-gpa-instruction').html(`
                 <p class="text mb-1">Determine the minimum GPA needed in future courses to raise or maintain your desired GPA level.</p>
@@ -221,7 +253,7 @@ $(document).ready(function() {
             requiredBar.set(0); // Fill the bar to 0%
             requiredBar.text.style.color = '#000000'; // Change text color to black
             requiredBar.text.innerHTML = '0';
-    
+
             // Update Required GPA instructions for "0"
             $('.required-gpa-instruction').html(`
                 <p class="text mb-1">Determine the minimum GPA needed in future courses to raise or maintain your desired GPA level.</p>
@@ -236,7 +268,7 @@ $(document).ready(function() {
         } else {
             $('#required-gpa-result').text(requiredGPA);
             requiredBar.animate(requiredGPA / 4);
-    
+
             // Update Required GPA instructions
             let remarks = '';
             if (requiredGPA >= 3.5) {
@@ -254,7 +286,7 @@ $(document).ready(function() {
             } else {
                 remarks = 'You need a Fail performance';
             }
-    
+
             $('.required-gpa-instruction').html(`
                 <p class="text mb-1">Determine the minimum GPA needed in future courses to raise or maintain your desired GPA level.</p>
                 <p class="result mb-1">Detailed Result</p>
@@ -266,18 +298,21 @@ $(document).ready(function() {
                 <p class="text mt-1">${remarks}</p>
             `);
         }
+    }
+
+    // Add input event listeners for real-time validation
+    $('#current-cgpa, #current-credits, #target-gpa, #target-credits').on('input', function() {
+        validateField(this.id, this.min, this.max);
     });
-    // $('#calculator-type').change(function() {
-    //     var selectedCalculator = $(this).val();
-        
-    //     if (selectedCalculator === 'gpa') {
-    //         $('#gpa-calculator').show();
-    //         $('#cgpa-calculator').hide();
-    //     } else if (selectedCalculator === 'cgpa') {
-    //         $('#gpa-calculator').hide();
-    //         $('#cgpa-calculator').show();
-    //     }
-    // });
+
+    $('#calculate-required-gpa').click(function() {
+        if (validateInputs()) {
+            calculateRequiredGPA();
+        } else {
+            alert("Please correct the errors in the fields.");
+        }
+    });
+
 // Function to show GPA Calculator and scroll to top
 function showGPACalculator() {
     $('#gpa-calculator').show();
@@ -319,43 +354,7 @@ $('#calculator-type').change(function() {
         showCGPACalculator();
     }
 });
-
-
-
-    const $currentCgpaInput = $('#current-cgpa');
-    const $targetCgpaInput = $('#target-gpa');
-    const $calculateButton = $('#calculate-required-gpa');
-
-    function validateInput() {
-        const currentCgpa = $currentCgpaInput.val().trim();
-        const targetCgpa = $targetCgpaInput.val().trim();
-        let isCurrentCgpaValid = true;
-        let isTargetCgpaValid = true;
-
-        if (currentCgpa === '' || (parseFloat(currentCgpa) >= 0 && parseFloat(currentCgpa) <= 4)) {
-            $currentCgpaInput.removeClass('error');
-        } else {
-            $currentCgpaInput.addClass('error');
-            isCurrentCgpaValid = false;
-        }
-
-        if (targetCgpa === '' || (parseFloat(targetCgpa) >= 0 && parseFloat(targetCgpa) <= 4)) {
-            $targetCgpaInput.removeClass('error');
-        } else {
-            $targetCgpaInput.addClass('error');
-            isTargetCgpaValid = false;
-        }
-
-        // Disable the button if either input is invalid and not empty
-        $calculateButton.prop('disabled', !(isCurrentCgpaValid && isTargetCgpaValid));
-    }
-
-    $currentCgpaInput.on('input', validateInput);
-    $targetCgpaInput.on('input', validateInput);
      
-
-
-
 
     $('.fb').click(function() {
         $('#feedbackDialog').show();
