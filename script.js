@@ -114,7 +114,13 @@ $(document).ready(function() {
         calculateGPA();
     });
 
-
+    $('.course-credits').on('input', function() {
+        let credits = parseFloat($(this).val());
+        if (credits <= 0) {
+            alert('Please enter a value greater than 0');
+            $(this).val('');
+        }
+    });
 
     function calculateGPA() {
         let totalPoints = 0;
