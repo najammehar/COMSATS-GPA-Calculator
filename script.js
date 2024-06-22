@@ -309,7 +309,7 @@ $(document).ready(function() {
         if (validateInputs()) {
             calculateRequiredGPA();
         } else {
-            alert("Please correct the errors in the fields.");
+            alert("Please enter valid values in the fields.");
         }
     });
 
