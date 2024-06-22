@@ -40,6 +40,10 @@ select {
 .fb{
     width: 50px;
     cursor: pointer !important;
+    transition: transform 0.3s;
+}
+.fb:hover{
+    transform: scale(1.2);
 }
 .main img{
     max-width: 35rem;
@@ -79,6 +83,7 @@ select {
     border: 1px solid #f0f0f0;
 }
 .calculator-selection select{
+    cursor: pointer;
     max-width: 30rem;
     width: 100%;
 }
@@ -132,7 +137,7 @@ select {
     padding: 1rem 1.7rem;
     cursor: pointer;
     border: none;
-    border-radius: 20px;
+    border-radius: 4px;
     transition: background-color 0.3s;
 }
 .remove-course{
@@ -150,8 +155,8 @@ select {
     border: 1px solid black;
 }
 #add-course:hover{
-    color: #075b07;
-    border: 1px solid #075b07;
+    color: #1E1F4A;
+    border: 1px solid #1E1F4A;
 }
 #course-container{
     margin-bottom: 2rem;
@@ -163,11 +168,14 @@ select {
     width: 100%;
 }
 #calculate-required-gpa{
-    background-color: #075b07;
-    width: 100%;
+    background-color: #1E1F4A;
+    width: 20%;
+}
+#calculate-required-gpa:hover{
+    background-color: #1D81CE;
 }
 .cgpa{
-    padding-bottom: 13.5rem;    
+    padding-bottom: 10rem;    
 }
 .section-1{
     display: flex;
@@ -198,7 +206,7 @@ select {
 }
 .result{
     padding: 0.5rem 1rem;
-    background-color: #075b07;
+    background-color: #1E1F4A;
     color: white;
     font-size: 1.6rem;
     font-weight: 500;
@@ -330,7 +338,7 @@ label{
 
 footer{
     padding: 2rem 0;
-    background-color: #2d3251;
+    background-color: #1E1F4A;
 }
 .resolution{
     max-width: 1200px;
@@ -392,14 +400,7 @@ footer{
 .tooltip-icon:hover::before {
     opacity: 1;
 }
-input.error {
-    border: 2px solid red;
-}
 
-button.btn:disabled {
-    background-color: grey;
-    cursor: not-allowed;
-}
 .qt{
     cursor: pointer;
 }
@@ -467,14 +468,14 @@ button.btn:disabled {
 }
 
 #feedbackForm button {
-    background-color: #007bff;
+    background-color: #1E1F4A;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 #feedbackForm button:hover {
-    background-color: #0056b3;
+    background-color: #1D81CE;
 }
 
 .section-2{

@@ -10,7 +10,7 @@ $(document).ready(function() {
             autoStyleContainer: false
         },
         from: { color: '#FF0000', width: 8 },
-        to: { color: '#075b07', width: 8 },
+        to: { color: '#1E1F4A', width: 8 },
         step: function(state, circle) {
             circle.path.setAttribute('stroke', state.color);
             circle.path.setAttribute('stroke-width', state.width);
@@ -47,7 +47,7 @@ $(document).ready(function() {
             autoStyleContainer: false
         },
         from: { color: '#FF0000', width: 8 },
-        to: { color: '#075b07', width: 8 },
+        to: { color: '#1E1F4A', width: 8 },
         step: function(state, circle) {
             circle.path.setAttribute('stroke', state.color);
             circle.path.setAttribute('stroke-width', state.width);
