@@ -24,7 +24,14 @@
         </div>
         </div>
     </section>
-
+    <dialog id="feedbackResult">
+        <button id="closeDialogSuccessBtn" class="close-btn">&times;</button>
+        <div class="content">
+        <div class="svg "><img src="success.png" alt=""></div>
+        <div class="title">Thank You!</div>
+        <div class="text mb-1" style="color: #1E1F4A;">Your feedback has been sent.</div>
+        </div>
+    </dialog>
     <dialog id="feedbackDialog">
         <button id="closeDialogBtn" class="close-btn">&times;</button>
         <h1 id="dt">Send Feedback</h1>
@@ -53,7 +60,7 @@
         <!-- GPA Calculator Section -->
         <section class="section-1" id="gpa-calculator">
             <div class="calculator">
-                <h2 class="title">GPA Calculator</h2>
+                <h2 class="title mb-1">GPA Calculator</h2>
                 <div id="course-container">
                         <div class="course">
                             <div class="course-input">
@@ -162,7 +169,7 @@
         <!-- CGPA Calculator Section -->
          <section class="section-1" id="cgpa-calculator" style="display: none;">
             <div class="calculator cgpa">
-                <h2 class="title">CGPA Calculator</h2>
+                <h2 class="title mb-1">CGPA Calculator</h2>
 
                 <div class="input-group">
                     <input type="number" id="current-cgpa" placeholder="Current CGPA" step="0.01" min="0" max="4">

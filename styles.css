@@ -97,7 +97,6 @@ select {
     font-size: 2.4rem;
     line-height: 1.5;
     font-weight: 700;
-    margin-bottom: 1rem;
     color: #1E1F4A;
 }
 .course {
@@ -411,7 +410,7 @@ footer{
 
 
 
-#feedbackDialog {
+#feedbackDialog, #feedbackResult {
     max-width: 400px;
     width: 90%;
     padding: 20px;
@@ -427,7 +426,7 @@ footer{
     z-index: 1000;
 }
 
-#closeDialogBtn {
+#closeDialogBtn, #closeDialogSuccessBtn {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -478,7 +477,16 @@ footer{
 #feedbackForm button:hover {
     background-color: #1D81CE;
 }
-
+.svg{
+    margin-top: 4rem;
+}
+.svg img{
+    width: 150px;
+}
+.content{
+    width: 100%;
+    text-align: center;
+}
 .section-2{
     max-width: 1120px;
     padding: 2rem;

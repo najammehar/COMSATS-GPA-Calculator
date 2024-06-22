@@ -364,11 +364,13 @@ $('#calculator-type').change(function() {
     $('#closeDialogBtn').click(function() {
         $('#feedbackDialog').hide();
     });
+    $('#closeDialogSuccessBtn').click(function() {
+        $('#feedbackResult').hide();
+    });
 
     // Handle form submission
     $('#feedbackForm').submit(function(e) {
         e.preventDefault();
-
         // Get form values
         var fullname = $('#fullname').val();
         var email = $('#email').val();
@@ -386,9 +388,9 @@ $('#calculator-type').change(function() {
             email: email,
             message: message
         },"i_sIGUfnwlsJYGhnH").then(function(response) {
-            alert('Feedback sent successfully!');
             $('#feedbackForm')[0].reset(); // Reset form after successful submission
-            $('#feedbackDialog').hide(); // Close dialog after submission
+            $('#feedbackDialog').hide();
+            $('#feedbackResult').show();
         }, function(error) {
             console.log('Error sending email:', error);
             alert('Error sending feedback. Please try again later.');
