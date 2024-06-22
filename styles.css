@@ -169,7 +169,6 @@ select {
 }
 #calculate-required-gpa{
     background-color: #1E1F4A;
-    width: 20%;
 }
 #calculate-required-gpa:hover{
     background-color: #1D81CE;
