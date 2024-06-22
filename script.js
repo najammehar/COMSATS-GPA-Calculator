@@ -307,10 +307,10 @@ $(document).ready(function() {
 
     $('#calculate-required-gpa').click(function() {
         if (validateInputs()) {
-            calculateRequiredGPA();
-        } else {
-            alert("Please enter valid values in the fields.");
-        }
+            calculateRequiredGPA(); }
+        // } else {
+        //     alert("Please enter valid values in the fields.");
+        // }
     });
 
 // Function to show GPA Calculator and scroll to top

@@ -69,6 +69,7 @@ select {
     padding: 2rem;
     border-radius: 0.8rem;
     padding-bottom: 8rem;
+    z-index: 2;
     box-shadow: 0 0.5rem 1rem rgba(7,29,63,0.125);
 }
 #course-container select,#course-container input, .calculator-selection select {
