@@ -368,17 +368,23 @@ $('#calculator-type').change(function() {
     // Handle form submission
     $('#feedbackForm').submit(function(e) {
         e.preventDefault();
+        
         // Get form values
         var fullname = $('#fullname').val();
         var email = $('#email').val();
         var message = $('#message').val();
-
+    
         // Validate form fields (you can add more validation as needed)
         if (fullname.trim() === '' || email.trim() === '' || message.trim() === '') {
             alert('Please fill in all fields');
             return;
         }
-
+    
+        // Show loading spinner on the button
+        var $sendBtn = $('#sendBtn');
+        $sendBtn.prop('disabled', true); // Disable button
+        $sendBtn.html('Sending... <span class="spinner"></span>'); // Change button text and add spinner
+    
         // Send email using EmailJS
         emailjs.send("service_teiwvjf", "template_z38nehr", {
             name: fullname,
@@ -388,11 +394,16 @@ $('#calculator-type').change(function() {
             $('#feedbackForm')[0].reset(); // Reset form after successful submission
             $('#feedbackDialog').hide();
             $('#feedbackResult').show();
+            $sendBtn.prop('disabled', false); // Enable button
+            $sendBtn.html('Send'); // Revert button text
         }, function(error) {
             console.log('Error sending email:', error);
             alert('Error sending feedback. Please try again later.');
+            $sendBtn.prop('disabled', false); // Enable button
+            $sendBtn.html('Send'); // Revert button text
         });
     });
+    
     
     $('.tooltip-icon').on('mouseenter', function() {
         var $icon = $(this);

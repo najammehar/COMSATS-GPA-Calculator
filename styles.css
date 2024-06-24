@@ -9,7 +9,7 @@ html{
 }
 body {
     font-family: 'Barlow Semi Condensed', sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f9f9f9;
 }
 input::placeholder,
 textarea::placeholder,
@@ -486,6 +486,64 @@ footer{
     max-width: 1120px;
     padding: 2rem;
     margin: 0 auto;
-    margin-bottom: 4rem;
+    margin: -180px auto 4rem auto; /* Add 280px top margin */
+    text-align: left;
+}
+table, th, td {
+    border: 0.5px solid grey;
+    border-collapse: collapse;
+  }
+td,th{
+    width: 10rem;
     text-align: center;
+}
+.formula {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 20px 0;
+    overflow-x: auto;
+    text-align: center;
+}
+code {
+    font-family: Consolas, 'Courier New', Courier, monospace;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    
+}
+ul,ol{
+    margin-left: 2rem;
+}
+.b-title{
+    font-size: 2.4rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: black;
+}
+.bm-title{
+    font-size: 3.5rem;
+    line-height: 1.5;
+    color: black;
+    font-weight: 600;
+}
+
+/* Spinner CSS */
+.spinner {
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.qt a{
+    text-decoration: none;
+    color: white;
 }
