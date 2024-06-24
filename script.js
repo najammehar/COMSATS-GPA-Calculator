@@ -1,4 +1,56 @@
 $(document).ready(function() {
+    // For Feedback 
+    $('.fb').click(function() {
+        $('#feedbackDialog').show();
+    });
+
+    // Close dialog when close button is clicked
+    $('#closeDialogBtn').click(function() {
+        $('#feedbackDialog').hide();
+    });
+    $('#closeDialogSuccessBtn').click(function() {
+        $('#feedbackResult').hide();
+    });
+
+    // Handle form submission
+    $('#feedbackForm').submit(function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        var fullname = $('#fullname').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+    
+        // Validate form fields (you can add more validation as needed)
+        if (fullname.trim() === '' || email.trim() === '' || message.trim() === '') {
+            alert('Please fill in all fields');
+            return;
+        }
+    
+        // Show loading spinner on the button
+        var $sendBtn = $('#sendBtn');
+        $sendBtn.prop('disabled', true); // Disable button
+        $sendBtn.html('Sending... <span class="spinner"></span>'); // Change button text and add spinner
+    
+        // Send email using EmailJS
+        emailjs.send("service_teiwvjf", "template_z38nehr", {
+            name: fullname,
+            email: email,
+            message: message
+        },"i_sIGUfnwlsJYGhnH").then(function(response) {
+            $('#feedbackForm')[0].reset(); // Reset form after successful submission
+            $('#feedbackDialog').hide();
+            $('#feedbackResult').show();
+            $sendBtn.prop('disabled', false); // Enable button
+            $sendBtn.html('Send'); // Revert button text
+        }, function(error) {
+            console.log('Error sending email:', error);
+            alert('Error sending feedback. Please try again later.');
+            $sendBtn.prop('disabled', false); // Enable button
+            $sendBtn.html('Send'); // Revert button text
+        });
+    });
+
     // Initialize the circular progress bar
     var bar = new ProgressBar.Circle('#gpa-container', {
         color: '#E0E2E6',
@@ -181,8 +233,6 @@ $(document).ready(function() {
         }
     }
     
-
-
     function showErrorMessage(inputId, message) {
         $(`#${inputId}-error`).text(message).css('color', 'red');
     }
@@ -320,13 +370,13 @@ function showGPACalculator() {
     }, 500);
 }
 
-// Function to show CGPA Calculator and scroll to it
+// Function to show GPA Planning Calculator and scroll to it
 function showCGPACalculator() {
     $('#gpa-calculator').hide();
     $('#cgpa-calculator').show();
     $('#calculator-type').val('cgpa'); // Update select field value
     $('html, body').animate({
-        scrollTop: $('#cgpa-calculator').offset().top - 20 // Scroll to CGPA calculator
+        scrollTop: $('#cgpa-calculator').offset().top - 20 // Scroll to GPA Planning Calculator
     }, 500);
 }
 
@@ -336,7 +386,7 @@ $('#gpa-link').click(function() {
     showGPACalculator();
 });
 
-// Event handler for clicking on CGPA Calculator link
+// Event handler for clicking on GPA Planning Calculator link
 $('#cgpa-link').click(function() {
     showCGPACalculator();
 });
@@ -351,60 +401,7 @@ $('#calculator-type').change(function() {
         showCGPACalculator();
     }
 });
-     
-
-    $('.fb').click(function() {
-        $('#feedbackDialog').show();
-    });
-
-    // Close dialog when close button is clicked
-    $('#closeDialogBtn').click(function() {
-        $('#feedbackDialog').hide();
-    });
-    $('#closeDialogSuccessBtn').click(function() {
-        $('#feedbackResult').hide();
-    });
-
-    // Handle form submission
-    $('#feedbackForm').submit(function(e) {
-        e.preventDefault();
-        
-        // Get form values
-        var fullname = $('#fullname').val();
-        var email = $('#email').val();
-        var message = $('#message').val();
-    
-        // Validate form fields (you can add more validation as needed)
-        if (fullname.trim() === '' || email.trim() === '' || message.trim() === '') {
-            alert('Please fill in all fields');
-            return;
-        }
-    
-        // Show loading spinner on the button
-        var $sendBtn = $('#sendBtn');
-        $sendBtn.prop('disabled', true); // Disable button
-        $sendBtn.html('Sending... <span class="spinner"></span>'); // Change button text and add spinner
-    
-        // Send email using EmailJS
-        emailjs.send("service_teiwvjf", "template_z38nehr", {
-            name: fullname,
-            email: email,
-            message: message
-        },"i_sIGUfnwlsJYGhnH").then(function(response) {
-            $('#feedbackForm')[0].reset(); // Reset form after successful submission
-            $('#feedbackDialog').hide();
-            $('#feedbackResult').show();
-            $sendBtn.prop('disabled', false); // Enable button
-            $sendBtn.html('Send'); // Revert button text
-        }, function(error) {
-            console.log('Error sending email:', error);
-            alert('Error sending feedback. Please try again later.');
-            $sendBtn.prop('disabled', false); // Enable button
-            $sendBtn.html('Send'); // Revert button text
-        });
-    });
-    
-    
+         
     $('.tooltip-icon').on('mouseenter', function() {
         var $icon = $(this);
         var tooltipText = $icon.data('tooltip');

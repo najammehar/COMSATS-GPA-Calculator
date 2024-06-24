@@ -1,136 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-html{
+
+html {
     font-size: 10px;
 }
+
 body {
     font-family: 'Barlow Semi Condensed', sans-serif;
     background-color: #f9f9f9;
 }
+
 input::placeholder,
 textarea::placeholder,
 select {
     font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
-.container{
-    position: relative;
-    top: -280px;
-    max-width: 1120px;
-    padding: 0 2rem;
-    width: 100%;
-    margin: 0 auto;
+label {
+    color: white;
 }
-.main{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-   
-}
-.message{
-    display: flex;
-    justify-content: left;
-    text-align: justify;
-}
-.fb{
-    width: 50px;
-    cursor: pointer !important;
-    transition: transform 0.3s;
-}
-.fb:hover{
-    transform: scale(1.2);
-}
-.main img{
-    max-width: 35rem;
-    width: 100%;
-}
-@media(max-width:768px){
-    .main img{
-        max-width: 25rem;
-    }
-    .fb{
-        width: 40px;
-    }
-}
-@media(max-width:426px){
-    .main img{
-        max-width: 22rem;
-    }
-    .fb{
-        width: 35px;
-    }
-}
-.calculator{
-    position: relative;
-    max-width: 70rem;
-    width: 100%; 
-    background-color: #FFFFFF;
-    padding: 2rem;
-    border-radius: 0.8rem;
-    padding-bottom: 8rem;
-    z-index: 2;
-    box-shadow: 0 0.5rem 1rem rgba(7,29,63,0.125);
-}
-#course-container select,#course-container input, .calculator-selection select {
-    display: block;
-    padding: 1rem;
-    border: none;
-    border: 1px solid #f0f0f0;
-}
-.calculator-selection select{
-    cursor: pointer;
-    max-width: 30rem;
-    width: 100%;
-}
-.calculator-selection{
-    display: flex;
-    align-items: center;
-    margin-bottom: 3rem;
-    gap: 1rem;
-}
-.title{
-    font-size: 2.4rem;
-    line-height: 1.5;
-    font-weight: 700;
-    color: #1E1F4A;
-}
-.course {
-    max-width: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-}
-.course-input{
-    max-width: 100%;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-}
-.course select{
-    color: grey;
-}
-.course input, .course select {
-    width: calc(34% - 10px);
-}
-.gpa-container{
-    color: #075b07;
-    background-color: #FFFFFF;
-    padding: 10px;
-    border-radius: 50%;
-    position: absolute;
-    right: 10px;
-    bottom: -25px;
-    width: 150px;
-    box-shadow: 0 0.25rem 1rem rgba(7,29,63,0.125);
-}
-.btn{
+
+/* General Styling */
+.btn {
     font-size: 1.4rem;
     font-weight: 500;
     color: white;
@@ -140,174 +36,126 @@ select {
     border-radius: 4px;
     transition: background-color 0.3s;
 }
-.remove-course{
-    cursor: pointer;
-}
-.remove-course:hover svg{
-    fill: #FF0000;
-}
-#add-course{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: black;
-    background-color: transparent;
-    border: 1px solid black;
-}
-#add-course:hover{
+
+.title {
+    font-size: 2.4rem;
+    line-height: 1.5;
+    font-weight: 700;
     color: #1E1F4A;
-    border: 1px solid #1E1F4A;
 }
-#course-container{
-    margin-bottom: 2rem;
-}
-.cgpa input{
-    display: block;
-    padding: 1rem;
-    /* margin-bottom: 1rem; */
-    width: 100%;
-}
-#calculate-required-gpa{
-    background-color: #1E1F4A;
-}
-#calculate-required-gpa:hover{
-    background-color: #1D81CE;
-}
-.cgpa{
-    padding-bottom: 10rem;    
-}
-.section-1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 100%;
-    width: 100%;
-}
-.required-gpa-instruction,.gpa-instruction{
-    position: relative;
-    max-width: 40rem;
-    width: 100%;
-    background-color: #FFFFFF;
-    padding: 2rem;
-    border-radius: 0 0.8rem 0.8rem 0;
-    box-shadow: 0 0.5rem 1rem rgba(7,29,63,0.125);
-}
-.text{
+
+.text {
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 1.5;
 }
-.mb-1{
+
+.mb-1 {
     margin-bottom: 1rem;
 }
-.mt-1{
+
+.mt-1 {
     margin-top: 1rem;
 }
-.result{
-    padding: 0.5rem 1rem;
-    background-color: #1E1F4A;
-    color: white;
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 1.5;
-}
-.t-content{
-    display: flex;
-    flex-direction: column;
-}
-@media(max-width: 768px){
-    .required-gpa-instruction, .gpa-instruction{
-        max-width: 25rem;
-    }
-}
-@media(max-width:760px){
-    .gpa-container{
-        right: -15px;
-    }
-}
-@media(max-width: 960px){
-    .section-1{
-        flex-direction: column;
-    }
-    .required-gpa-instruction,.gpa-instruction{
-        max-width: 100%;
-        border-radius: 0.8rem;
-        margin-bottom: 2rem;
-    }
-    .calculator{
-        margin-bottom: 3rem;
-    }
-    .calculator{
-        max-width: 100%;
-    }
-}
-label{
-    color: white;
-}
-.section-0{
+
+/* Header Styling */
+.section-0 {
     position: relative;
     max-width: 1200px;
     width: 100%;
-    min-height: calc(100vh - 280px);
     margin: 0 auto;
-    background-image: url('/bg.jpg'); /* Replace with the path to your image */
-    background-size: cover; /* Ensures the image covers the entire section */
-    background-position: center; /* Centers the image */
-    border-radius:0 0 1.2rem 1.2rem;
+    min-height: calc(100vh - 280px);
+    background-image: url('/GPA Calculator/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 1.2rem 1.2rem;
     padding-bottom: 280px;
 }
+
 .content-wrapper {
     max-width: 1120px;
     padding: 0 2rem;
     margin: 0 auto;
     position: relative;
-    z-index: 10; /* Ensure content is above the background image */
+    z-index: 10;
 }
-.main-title{
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.main img {
+    max-width: 35rem;
+    width: 100%;
+}
+
+.fb {
+    width: 50px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.fb:hover {
+    transform: scale(1.1);
+}
+
+.for-img {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.for-img img {
+    width: 40rem;
+}
+
+.t-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title {
     font-size: 3.5rem;
     line-height: 1.5;
     color: white;
     font-weight: 500;
     margin-top: 1rem;
 }
-.for-img{
+
+.message {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: left;
+    text-align: justify;
+    color: white;
+    max-width: 40rem;
+    margin-bottom: 4rem;
 }
-.for-img img{
-    width: 40rem;
-}
-@media(max-width:700px){
-    .for-img{
+
+/* Header Responsiveness */
+@media(max-width:700px) {
+    .for-img {
         flex-direction: column;
         align-items: center;
         margin-bottom: 4rem;
     }
-    .t-content{
+
+    .t-content {
         align-items: center;
     }
 }
-@media(max-width:768px){
-    .for-img img{
-        width: 30rem;
-    }
-    .calculator-selection{
-        justify-content: center;
-    }
-    .content-wrapper{
-        display: flex;
-        flex-direction: column;
-    }
-}
+
 @media(max-width: 1200px) {
     .section-0 {
         min-height: calc(80vh - 280px);
     }
 }
+
 @media(max-width: 1100px) {
     .section-0 {
-        border-radius:0 0 .8rem .8rem;
+        border-radius: 0 0 .8rem .8rem;
     }
 }
 
@@ -321,6 +169,23 @@ label{
     .section-0 {
         min-height: calc(60vh - 280px);
     }
+
+    .for-img img {
+        width: 30rem;
+    }
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main img {
+        max-width: 25rem;
+    }
+
+    .fb {
+        width: 40px;
+    }
 }
 
 @media(max-width: 576px) {
@@ -329,45 +194,247 @@ label{
     }
 }
 
-@media(max-width: 425px) {
+@media(max-width: 426px) {
     .section-0 {
         min-height: calc(40vh - 280px);
     }
+
+    .main img {
+        max-width: 22rem;
+    }
+
+    .fb {
+        width: 35px;
+    }
 }
 
-footer{
-    padding: 2rem 0;
-    background-color: #1E1F4A;
+
+/* Feedback Dialogs */
+#feedbackDialog,
+#feedbackResult {
+    max-width: 400px;
+    width: 90%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0.5rem 1rem rgba(7, 29, 63, 0.125);
+    border: none;
+    border-radius: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 1000;
 }
-.resolution{
-    max-width: 1200px;
+
+#closeDialogBtn,
+#closeDialogSuccessBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+}
+
+#dt {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #1E1F4A;
+}
+
+#feedbackForm {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#feedbackForm label {
+    color: black;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+#feedbackForm input,
+#feedbackForm textarea,
+#feedbackForm button {
+    margin-bottom: 16px;
+    padding: 8px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#feedbackForm button {
+    background-color: #1E1F4A;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#feedbackForm button:hover {
+    background-color: #1D81CE;
+}
+
+.svg {
+    margin-top: 4rem;
+}
+
+.svg img {
+    width: 150px;
+}
+
+.content {
+    width: 100%;
+    text-align: center;
+}
+
+/* Calculators Styling */
+.container {
+    position: relative;
+    top: -280px;
+    max-width: 1120px;
+    padding: 0 2rem;
     width: 100%;
     margin: 0 auto;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
-.links{
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-}
-.quicklinks{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+#course-container {
     margin-bottom: 2rem;
 }
 
+#course-container select,
+#course-container input,
+.calculator-selection select {
+    display: block;
+    padding: 1rem;
+    border: none;
+    border: 1px solid #f0f0f0;
+}
 
+.calculator-selection select {
+    cursor: pointer;
+    max-width: 30rem;
+    width: 100%;
+}
+
+.calculator-selection {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    gap: 1rem;
+}
+
+.section-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    width: 100%;
+}
+
+.calculator {
+    position: relative;
+    max-width: 70rem;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    padding-bottom: 8rem;
+    z-index: 2;
+    box-shadow: 0 0.5rem 1rem rgba(7, 29, 63, 0.125);
+}
+
+.course {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.course-input {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.course select {
+    color: grey;
+}
+
+.course input,
+.course select {
+    width: calc(34% - 10px);
+}
+
+.required-gpa-instruction,
+.gpa-instruction {
+    position: relative;
+    max-width: 40rem;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 0 0.8rem 0.8rem 0;
+    box-shadow: 0 0.5rem 1rem rgba(7, 29, 63, 0.125);
+}
+
+.remove-course {
+    cursor: pointer;
+}
+
+.remove-course:hover svg {
+    fill: #FF0000;
+}
+
+.gpa-container {
+    color: #075b07;
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    bottom: -25px;
+    width: 150px;
+    box-shadow: 0 0.25rem 1rem rgba(7, 29, 63, 0.125);
+}
+
+.result {
+    padding: 0.5rem 1rem;
+    background-color: #1E1F4A;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.cgpa {
+    padding-bottom: 10rem;
+}
+
+.cgpa input {
+    display: block;
+    padding: 1rem;
+    /* margin-bottom: 1rem; */
+    width: 100%;
+}
 
 .input-group {
     position: relative;
     display: flex;
     align-items: center;
     gap: 1rem;
-    
+
 }
 
 .tooltip-icon {
@@ -396,107 +463,92 @@ footer{
     text-align: center;
 }
 
-.qt{
-    cursor: pointer;
-}
-.qt:hover{
-    text-decoration: underline;
-}
-
-
-
-#feedbackDialog, #feedbackResult {
-    max-width: 400px;
-    width: 90%;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0.5rem 1rem rgba(7,29,63,0.125);
-    border: none;
-    border-radius: 5px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    z-index: 1000;
-}
-
-#closeDialogBtn, #closeDialogSuccessBtn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: black;
-}
-#dt{
-    position: absolute;
-    top: 8px;
-    left: 10px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #1E1F4A;
-}
-#feedbackForm {
-    margin-top: 3rem;
+#add-course {
     display: flex;
-    flex-direction: column;
-}
-
-#feedbackForm label {
+    align-items: center;
+    gap: 5px;
     color: black;
-    font-size: 1.4rem;
-    font-weight: 500;
-    margin-bottom: 8px;
+    background-color: transparent;
+    border: 1px solid black;
 }
 
-#feedbackForm input, #feedbackForm textarea, #feedbackForm button {
-    margin-bottom: 16px;
-    padding: 8px;
-    border: 1px solid grey;
-    border-radius: 4px;
-    font-size: 14px;
+#add-course:hover {
+    color: #1E1F4A;
+    border: 1px solid #1E1F4A;
 }
 
-#feedbackForm button {
+#calculate-required-gpa {
     background-color: #1E1F4A;
-    color: white;
-    border: none;
-    cursor: pointer;
 }
 
-#feedbackForm button:hover {
+#calculate-required-gpa:hover {
     background-color: #1D81CE;
 }
-.svg{
-    margin-top: 4rem;
+
+/* Calculator Responsiveness */
+@media(max-width: 768px) {
+
+    .required-gpa-instruction,
+    .gpa-instruction {
+        max-width: 25rem;
+    }
+
+    .calculator-selection {
+        justify-content: center;
+    }
 }
-.svg img{
-    width: 150px;
+
+@media(max-width:760px) {
+    .gpa-container {
+        right: -15px;
+    }
 }
-.content{
-    width: 100%;
-    text-align: center;
+
+@media(max-width: 960px) {
+    .section-1 {
+        flex-direction: column;
+    }
+
+    .required-gpa-instruction,
+    .gpa-instruction {
+        max-width: 100%;
+        border-radius: 0.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .calculator {
+        margin-bottom: 3rem;
+    }
+
+    .calculator {
+        max-width: 100%;
+    }
 }
-.section-2{
+
+/* GPA Guide */
+.section-2 {
     max-width: 1120px;
     padding: 2rem;
     margin: 0 auto;
-    margin: -180px auto 4rem auto; /* Add 280px top margin */
+    margin: -180px auto 4rem auto;
+    /* Add 280px top margin */
     text-align: left;
 }
-table, th, td {
-    border: 0.5px solid grey;
-    border-collapse: collapse;
-  }
-td,th{
-    width: 10rem;
-    text-align: center;
+
+.bm-title {
+    font-size: 3.5rem;
+    line-height: 1.5;
+    color: black;
+    font-weight: 600;
 }
+
+.b-title {
+    font-size: 2.4rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: black;
+}
+
 .formula {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -505,26 +557,66 @@ td,th{
     overflow-x: auto;
     text-align: center;
 }
+
 code {
     font-family: Consolas, 'Courier New', Courier, monospace;
     font-size: 1.6rem;
     line-height: 1.5;
-    
+
 }
-ul,ol{
+
+table,
+th,
+td {
+    border: 0.5px solid grey;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    width: 10rem;
+    text-align: center;
+}
+
+ul,
+ol {
     margin-left: 2rem;
 }
-.b-title{
-    font-size: 2.4rem;
-    line-height: 1.5;
-    font-weight: 500;
-    color: black;
+
+/* Footer Styling */
+footer {
+    padding: 2rem 0;
+    background-color: #1E1F4A;
 }
-.bm-title{
-    font-size: 3.5rem;
-    line-height: 1.5;
-    color: black;
-    font-weight: 600;
+
+.resolution {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 2rem;
+}
+
+.qt {
+    cursor: pointer;
+}
+
+.qt:hover {
+    text-decoration: underline;
+}
+
+.qt a {
+    text-decoration: none;
+    color: white;
 }
 
 /* Spinner CSS */
@@ -540,10 +632,11 @@ ul,ol{
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-.qt a{
-    text-decoration: none;
-    color: white;
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

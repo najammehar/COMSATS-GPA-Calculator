@@ -11,25 +11,24 @@
 </head>
 
 <body>
-    <section class="section-0">
+    <header class="section-0">
         <div class="content-wrapper">
-            <div class="main" style="padding-top: 2rem;">
-                <img src="logo_with_text.png" alt="">
-                <div class="fb"><img src="feedback_8437070 (1).png" alt=""></div>
+            <div class="main">
+                <img src="logo_with_text.png" alt="COMSATS Logo Image">
+                <div class="fb"><img title="Feedback" src="feedback_8437070 (1).png" alt="Feedback Icon"></div>
             </div>
             <div class="for-img">
                 <div class="t-content">
-                    <div class="main-title">GPA CALCULATOR</div>
-                    <div class="message text mt-1" style="color: white; max-width: 35rem; margin-bottom: 4rem;">
+                    <h1 class="main-title">COMSATS GPA CALCULATOR</h1>
+                    <div class="message text mt-1">
                         Calculate your semester and cumulative GPA with ease using the COMSATS GPA Calculator. Track
                         your academic progress, check your grades, and gain a better understanding of the GPA scale.
                         We're here to support your journey to academic excellence!</div>
                 </div>
-                <div"><img src="img.png" alt="">
+                <div><img src="img.png" alt="Hero Image"></div>
             </div>
         </div>
-        </div>
-    </section>
+    </header>
     <dialog id="feedbackResult">
         <button id="closeDialogSuccessBtn" class="close-btn">&times;</button>
         <div class="content">
@@ -54,319 +53,332 @@
             <button type="submit" id="sendBtn">Send</button>
         </form>
     </dialog>
+    <main>
+        <div class="container">
+            <div class="calculator-selection">
+                <label class="text" for="calculator-type"><b>Select Calculator:</b></label>
+                <select id="calculator-type">
+                    <option value="gpa" selected>GPA Calculator</option>
+                    <option value="cgpa">GPA Planning Calculator</option>
+                </select>
+            </div>
+            <!-- GPA Calculator Section -->
+            <section class="section-1" id="gpa-calculator">
+                <div class="calculator">
+                    <h2 class="title mb-1">GPA Calculator</h2>
+                    <div id="course-container">
+                        <div class="course">
+                            <div class="course-input">
+                                <input type="text" class="course-name" placeholder="Course">
+                                <select class="course-gpa">
+                                    <option selected="selected" disabled="disabled" hidden="hidden">GPA</option>
+                                    <option value="4.00">4.00</option>
+                                    <option value="3.66">3.66</option>
+                                    <option value="3.33">3.33</option>
+                                    <option value="3.00">3.00</option>
+                                    <option value="2.66">2.66</option>
+                                    <option value="2.33">2.33</option>
+                                    <option value="2.00">2.00</option>
+                                    <option value="1.66">1.66</option>
+                                    <option value="1.33">1.33</option>
+                                    <option value="1.00">1.00</option>
+                                    <option value="0.00">0.00</option>
+                                </select>
+                                <input type="number" class="course-credits" placeholder="Credit Hours" min="0">
+                            </div>
+                            <div class="remove-course"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                                    viewBox="0 -960 960 960" width="24px" fill="grey">
+                                    <path
+                                        d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                                </svg></div>
+                        </div>
+                        <div class="course">
+                            <div class="course-input">
+                                <input type="text" class="course-name" placeholder="Course">
+                                <!-- <input type="number" class="course-gpa" placeholder="GPA" step="0.01" min="0" max="4"> -->
+                                <select class="course-gpa">
+                                    <option selected="selected" disabled="disabled" hidden="hidden">GPA</option>
+                                    <option value="4.00">4.00</option>
+                                    <option value="3.66">3.66</option>
+                                    <option value="3.33">3.33</option>
+                                    <option value="3.00">3.00</option>
+                                    <option value="2.66">2.66</option>
+                                    <option value="2.33">2.33</option>
+                                    <option value="2.00">2.00</option>
+                                    <option value="1.66">1.66</option>
+                                    <option value="1.33">1.33</option>
+                                    <option value="1.00">1.00</option>
+                                    <option value="0.00">0.00</option>
+                                </select>
+                                <input type="number" class="course-credits" placeholder="Credit Hours" min="0">
+                            </div>
+                            <div class="remove-course"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                                    viewBox="0 -960 960 960" width="24px" fill="grey">
+                                    <path
+                                        d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                                </svg></div>
+                        </div>
+                        <div class="course">
+                            <div class="course-input">
+                                <input type="text" class="course-name" placeholder="Course">
+                                <!-- <input type="number" class="course-gpa" placeholder="GPA" step="0.01" min="0" max="4"> -->
+                                <select class="course-gpa">
+                                    <option selected="selected" disabled="disabled" hidden="hidden">GPA</option>
+                                    <option value="4.00">4.00</option>
+                                    <option value="3.66">3.66</option>
+                                    <option value="3.33">3.33</option>
+                                    <option value="3.00">3.00</option>
+                                    <option value="2.66">2.66</option>
+                                    <option value="2.33">2.33</option>
+                                    <option value="2.00">2.00</option>
+                                    <option value="1.66">1.66</option>
+                                    <option value="1.33">1.33</option>
+                                    <option value="1.00">1.00</option>
+                                    <option value="0.00">0.00</option>
+                                </select>
+                                <input type="number" class="course-credits" placeholder="Credit Hours" min="0">
+                            </div>
+                            <div class="remove-course"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                                    viewBox="0 -960 960 960" width="24px" fill="grey">
+                                    <path
+                                        d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                                </svg></div>
+                        </div>
+                        <div class="course">
+                            <div class="course-input">
+                                <input type="text" class="course-name" placeholder="Course">
+                                <!-- <input type="number" class="course-gpa" placeholder="GPA" step="0.01" min="0" max="4"> -->
+                                <select class="course-gpa">
+                                    <option selected="selected" disabled="disabled" hidden="hidden">GPA</option>
+                                    <option value="4.00">4.00</option>
+                                    <option value="3.66">3.66</option>
+                                    <option value="3.33">3.33</option>
+                                    <option value="3.00">3.00</option>
+                                    <option value="2.66">2.66</option>
+                                    <option value="2.33">2.33</option>
+                                    <option value="2.00">2.00</option>
+                                    <option value="1.66">1.66</option>
+                                    <option value="1.33">1.33</option>
+                                    <option value="1.00">1.00</option>
+                                    <option value="0.00">0.00</option>
+                                </select>
+                                <input type="number" class="course-credits" placeholder="Credit Hours" min="0">
+                            </div>
+                            <div class="remove-course"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                                    viewBox="0 -960 960 960" width="24px" fill="grey">
+                                    <path
+                                        d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                                </svg></div>
+                        </div>
 
-    <div class="container">
-        <div class="calculator-selection">
-            <label class="text" for="calculator-type"><b>Select Calculator:</b></label>
-            <select id="calculator-type">
-                <option value="gpa" selected>GPA Calculator</option>
-                <option value="cgpa">CGPA Calculator</option>
-            </select>
+
+                    </div>
+                    <button id="add-course" class="btn"><span><svg xmlns="http://www.w3.org/2000/svg" width="12"
+                                height="12" viewBox="0 0 12 12">
+                                <g fill="black" fill-rule="evenodd">
+                                    <path d="M2.5 5.5V3h1v2.5H6v1H3.5V9h-1V6.5H0v-1h2.5z" />
+                                    <path d="M12 1v11H5v-1h6V1H5V0h7v1z" />
+                                </g>
+                            </svg></span><span>Add Course</span></button>
+                    <div class="gpa-container" id="gpa-container"></div>
+                </div>
+                <div class="gpa-instruction">
+                    <p class="text mb-1">Based on COMSATS' GPA policy, this calculator lets you enter course details,
+                        GPA,
+                        and credits for instant results.</p>
+                    <p class="result mb-1">Detailed Result</p>
+                    <p class="text mb-1">Total Credit Hours: 0</p>
+                    <p class="text mb-1">Honor Points: 0.00</p>
+                    <p class="text mb-1">GPA: 0.00</p>
+                    <hr>
+                    <p class="text mt-1">No remarks</p>
+                </div>
+            </section>
+            <!-- GPA Planning Calculator Section -->
+            <section class="section-1" id="cgpa-calculator" style="display: none;">
+                <div class="calculator cgpa">
+                    <h2 class="title mb-1">GPA Planning Calculator</h2>
+
+                    <div class="input-group">
+                        <input type="number" id="current-cgpa" placeholder="Current CGPA" step="0.01" min="0" max="4">
+                        <span class="tooltip-icon" data-tooltip="Current CGPA you have achieved so far"><svg
+                                xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#212121">
+                                <path
+                                    d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                            </svg></span>
+                    </div>
+                    <div class="error-message" id="current-cgpa-error"></div>
+                    <div class="input-group mt-1">
+                        <input type="number" id="current-credits" placeholder="Current Credits" min="0">
+                        <span class="tooltip-icon" data-tooltip="Number of credit hours you have learned so far."><svg
+                                xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#212121">
+                                <path
+                                    d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                            </svg></span>
+                    </div>
+                    <div class="error-message" id="current-credits-error"></div>
+                    <div class="input-group mt-1">
+                        <input type="number" id="target-gpa" placeholder="Target CGPA" step="0.01" min="0" max="4">
+                        <span class="tooltip-icon" data-tooltip="CGPA You want to achieve."><svg
+                                xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#212121">
+                                <path
+                                    d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                            </svg></span>
+                    </div>
+                    <div class="error-message" id="target-gpa-error"></div>
+                    <div class="input-group  mt-1">
+                        <input type="number" id="target-credits" placeholder="Additional credit hours" min="0">
+                        <span class="tooltip-icon"
+                            data-tooltip="Number of credit hours in current semester which is to be added"><svg
+                                xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#212121">
+                                <path
+                                    d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                            </svg></span>
+                    </div>
+                    <div class="error-message" id="target-credits-error"></div>
+                    <button type="submit" class="btn mt-1" id="calculate-required-gpa">Calculate</button>
+
+                    <div class="gpa-container" id="required-gpa-container"></div>
+                </div>
+
+                <div class="required-gpa-instruction">
+                    <p class="text mb-1">Determine the minimum GPA needed in future courses to raise or maintain your
+                        desired GPA level.</p>
+                    <p class="result mb-1">Detailed Result</p>
+                    <p class="text mb-1">Desired CGPA: 0.0</p>
+                    <p class="text mb-1">Current CGPA: 0.0</p>
+                    <p class="text mb-1">Additional Credits: 0</p>
+                    <p class="text mb-1">Required GPA: 0.0</p>
+                    <hr>
+                    <p class="text mt-1">No remarks</p>
+                </div>
+            </section>
         </div>
-        <!-- GPA Calculator Section -->
-        <section class="section-1" id="gpa-calculator">
-            <div class="calculator">
-                <h2 class="title mb-1">GPA Calculator</h2>
-                <div id="course-container">
-                    <div class="course">
-                        <div class="course-input">
-                            <input type="text" class="course-name" placeholder="Course">
-                            <!-- <input type="number" class="course-gpa" placeholder="GPA" step="0.01" min="0" max="4"> -->
-                            <select class="course-gpa">
-                                <option selected="selected" disabled="disabled" hidden="hidden">GPA</option>
-                                <option value="4.00">4.00</option>
-                                <option value="3.66">3.66</option>
-                                <option value="3.33">3.33</option>
-                                <option value="3.00">3.00</option>
-                                <option value="2.66">2.66</option>
-                                <option value="2.33">2.33</option>
-                                <option value="2.00">2.00</option>
-                                <option value="1.66">1.66</option>
-                                <option value="1.33">1.33</option>
-                                <option value="1.00">1.00</option>
-                                <option value="0.00">0.00</option>
-                            </select>
-                            <input type="number" class="course-credits" placeholder="Credit Hours" min="0">
-                        </div>
-                        <div class="remove-course"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
-                                viewBox="0 -960 960 960" width="24px" fill="grey">
-                                <path
-                                    d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-                            </svg></div>
-                    </div>
-                    <div class="course">
-                        <div class="course-input">
-                            <input type="text" class="course-name" placeholder="Course">
-                            <!-- <input type="number" class="course-gpa" placeholder="GPA" step="0.01" min="0" max="4"> -->
-                            <select class="course-gpa">
-                                <option selected="selected" disabled="disabled" hidden="hidden">GPA</option>
-                                <option value="4.00">4.00</option>
-                                <option value="3.66">3.66</option>
-                                <option value="3.33">3.33</option>
-                                <option value="3.00">3.00</option>
-                                <option value="2.66">2.66</option>
-                                <option value="2.33">2.33</option>
-                                <option value="2.00">2.00</option>
-                                <option value="1.66">1.66</option>
-                                <option value="1.33">1.33</option>
-                                <option value="1.00">1.00</option>
-                                <option value="0.00">0.00</option>
-                            </select>
-                            <input type="number" class="course-credits" placeholder="Credit Hours" min="0">
-                        </div>
-                        <div class="remove-course"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
-                                viewBox="0 -960 960 960" width="24px" fill="grey">
-                                <path
-                                    d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-                            </svg></div>
-                    </div>
-                    <div class="course">
-                        <div class="course-input">
-                            <input type="text" class="course-name" placeholder="Course">
-                            <!-- <input type="number" class="course-gpa" placeholder="GPA" step="0.01" min="0" max="4"> -->
-                            <select class="course-gpa">
-                                <option selected="selected" disabled="disabled" hidden="hidden">GPA</option>
-                                <option value="4.00">4.00</option>
-                                <option value="3.66">3.66</option>
-                                <option value="3.33">3.33</option>
-                                <option value="3.00">3.00</option>
-                                <option value="2.66">2.66</option>
-                                <option value="2.33">2.33</option>
-                                <option value="2.00">2.00</option>
-                                <option value="1.66">1.66</option>
-                                <option value="1.33">1.33</option>
-                                <option value="1.00">1.00</option>
-                                <option value="0.00">0.00</option>
-                            </select>
-                            <input type="number" class="course-credits" placeholder="Credit Hours" min="0">
-                        </div>
-                        <div class="remove-course"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
-                                viewBox="0 -960 960 960" width="24px" fill="grey">
-                                <path
-                                    d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-                            </svg></div>
-                    </div>
-                    <div class="course">
-                        <div class="course-input">
-                            <input type="text" class="course-name" placeholder="Course">
-                            <!-- <input type="number" class="course-gpa" placeholder="GPA" step="0.01" min="0" max="4"> -->
-                            <select class="course-gpa">
-                                <option selected="selected" disabled="disabled" hidden="hidden">GPA</option>
-                                <option value="4.00">4.00</option>
-                                <option value="3.66">3.66</option>
-                                <option value="3.33">3.33</option>
-                                <option value="3.00">3.00</option>
-                                <option value="2.66">2.66</option>
-                                <option value="2.33">2.33</option>
-                                <option value="2.00">2.00</option>
-                                <option value="1.66">1.66</option>
-                                <option value="1.33">1.33</option>
-                                <option value="1.00">1.00</option>
-                                <option value="0.00">0.00</option>
-                            </select>
-                            <input type="number" class="course-credits" placeholder="Credit Hours" min="0">
-                        </div>
-                        <div class="remove-course"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
-                                viewBox="0 -960 960 960" width="24px" fill="grey">
-                                <path
-                                    d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-                            </svg></div>
-                    </div>
+        <section class="section-2">
+            <h1 class="bm-title mb-1">COMSATS GPA System</h1>
+            <p class="text mb-1">Understanding the grading system of your university is crucial for tracking your
+                academic
+                progress and planning your studies effectively. For students at the COMSATS Institute of Information
+                Technology, the GPA system is a key component in measuring academic performance. This blog provides a
+                detailed explanation of the COMSATS GPA system, including the calculation methods and the grading scale.
+            </p>
+            <h2 class="b-title mb-1">Absolute Grading System</h2>
+            <p class="text mb-1">COMSATS employs an absolute grading system to assess student performance. Unlike
+                relative
+                grading systems, where grades are assigned based on a comparison with peers, the absolute grading system
+                awards grades based on predetermined thresholds. This ensures that students are evaluated strictly on
+                their
+                individual performance.</p>
+            <h2 class="b-title mb-1">Breakdown of Marks</h2>
+            <p class="text mb-1">The GPA in each subject at COMSATS is calculated based on three main components:
+            <ol class="mb-1">
+                <li class="text"><b>Midterm Exams (25%): </b>Midterm exams are held midway through the semester and
+                    contribute 25% to the final grade.</li>
+                <li class="text"><b>Quizzes and Assignment (25%): </b>Regular quizzes and assignments throughout the
+                    semester make up another 25% of the final grade.</li>
+                <li class="text"><b>Final Exams(50%): </b>The final exams, held at the end of the semester, have the
+                    most
+                    significant weight, contributing 50% to the final grade.</li>
+            </ol>
+            <p class="text mb-1">This distribution ensures a balanced evaluation, considering both continuous assessment
+                and
+                performance in comprehensive exams.</p>
+            </p>
+            <h2 class="b-title mb-1">Grading Scale</h2>
+            <table class="text mb-1">
+                <tr>
+                    <th>Marks</th>
+                    <th>GPA</th>
+                </tr>
+                <tr>
+                    <td>85 and above</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>80-84</td>
+                    <td>3.66</td>
+                </tr>
+                <tr>
+                    <td>75-79</td>
+                    <td>3.33</td>
+                </tr>
+                <tr>
+                    <td>70-74</td>
+                    <td>3.00</td>
+                </tr>
+                <tr>
+                    <td>66-69</td>
+                    <td>2.66</td>
+                </tr>
+                <tr>
+                    <td>60-65</td>
+                    <td>2.33</td>
+                </tr>
+                <tr>
+                    <td>55-59</td>
+                    <td>2.00</td>
+                </tr>
+                <tr>
+                    <td>51-54</td>
+                    <td>1.33</td>
+                </tr>
+                <tr>
+                    <td>50</td>
+                    <td>1.00</td>
+                </tr>
+                <tr>
+                    <td>0-49</td>
+                    <td>0 (Fail)</td>
+                </tr>
+            </table>
+            <p class="text mb-1">These GPA values are awarded based on the percentage of marks obtained in a subject.
+                For instance, scoring 85% or above in a subject will earn you a perfect GPA of 4.00 for that course.</p>
+            <h2 class="b-title mb-1">GPA and CGPA Calculation</h2>
 
+            <p class="text">The Grade Point Average (GPA) for a semester is calculated using the following general
+                formula:</p>
 
-                </div>
-                <button id="add-course" class="btn"><span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                            viewBox="0 0 12 12">
-                            <g fill="black" fill-rule="evenodd">
-                                <path d="M2.5 5.5V3h1v2.5H6v1H3.5V9h-1V6.5H0v-1h2.5z" />
-                                <path d="M12 1v11H5v-1h6V1H5V0h7v1z" />
-                            </g>
-                        </svg></span><span>Add Course</span></button>
-                <div class="gpa-container" id="gpa-container"></div>
+            <div class="formula">
+                <code>GPA = (&#x2211; (Grade Points * Credit Hours)) / (&#x2211; Credit Hours)</code>
             </div>
-            <div class="gpa-instruction">
-                <p class="text mb-1">Based on COMSATS' GPA policy, this calculator lets you enter course details, GPA,
-                    and credits for instant results.</p>
-                <p class="result mb-1">Detailed Result</p>
-                <p class="text mb-1">Total Credit Hours: 0</p>
-                <p class="text mb-1">Honor Points: 0.00</p>
-                <p class="text mb-1">GPA: 0.00</p>
-                <hr>
-                <p class="text mt-1">No remarks</p>
+
+            <p class="text mb-1">Where:</p>
+            <ul class="text mb-1">
+                <li>Grade Points are derived from the grading scale mentioned above.</li>
+                <li>Credit Hours refer to the number of hours assigned to each course.</li>
+            </ul>
+
+            <p class="text">The Cumulative Grade Point Average (CGPA) is the weighted average of the GPA scores of all
+                semesters completed so far. It is calculated using the formula:</p>
+
+            <div class="formula">
+                <code>CGPA = (&#x2211; (GPA of each semester * Credit Hours of each semester)) / (&#x2211; Credit Hours of all semesters)</code>
             </div>
+
+            <p class="text mb-1">Both GPA and CGPA provide a comprehensive overview of a student’s academic performance,
+                with the CGPA reflecting the overall performance across multiple semesters.</p>
+
+            <h2 class="b-title mb-1">Conclusion</h2>
+
+            <p class="text">Understanding the GPA system at COMSATS is essential for academic planning and performance
+                tracking. The absolute grading system, combined with a clear breakdown of assessment components, ensures
+                that students can focus on both continuous learning and final examinations. By maintaining a consistent
+                performance across all components, students can achieve their desired GPA and CGPA, paving the way for
+                academic success and future opportunities.</p>
         </section>
-        <!-- CGPA Calculator Section -->
-        <section class="section-1" id="cgpa-calculator" style="display: none;">
-            <div class="calculator cgpa">
-                <h2 class="title mb-1">CGPA Calculator</h2>
-
-                <div class="input-group">
-                    <input type="number" id="current-cgpa" placeholder="Current CGPA" step="0.01" min="0" max="4">
-                    <span class="tooltip-icon" data-tooltip="Current CGPA you have achieved so far"><svg
-                            xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                            fill="#212121">
-                            <path
-                                d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-                        </svg></span>
-                </div>
-                <div class="error-message" id="current-cgpa-error"></div>
-                <div class="input-group mt-1">
-                    <input type="number" id="current-credits" placeholder="Current Credits" min="0">
-                    <span class="tooltip-icon" data-tooltip="Number of credit hours you have learned so far."><svg
-                            xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                            fill="#212121">
-                            <path
-                                d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-                        </svg></span>
-                </div>
-                <div class="error-message" id="current-credits-error"></div>
-                <div class="input-group mt-1">
-                    <input type="number" id="target-gpa" placeholder="Target CGPA" step="0.01" min="0" max="4">
-                    <span class="tooltip-icon" data-tooltip="CGPA You want to achieve."><svg
-                            xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                            fill="#212121">
-                            <path
-                                d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-                        </svg></span>
-                </div>
-                <div class="error-message" id="target-gpa-error"></div>
-                <div class="input-group  mt-1">
-                    <input type="number" id="target-credits" placeholder="Additional credit hours" min="0">
-                    <span class="tooltip-icon"
-                        data-tooltip="Number of credit hours in current semester which is to be added"><svg
-                            xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                            fill="#212121">
-                            <path
-                                d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-                        </svg></span>
-                </div>
-                <div class="error-message" id="target-credits-error"></div>
-                <button type="submit" class="btn mt-1" id="calculate-required-gpa">Calculate</button>
-
-                <div class="gpa-container" id="required-gpa-container"></div>
-            </div>
-
-            <div class="required-gpa-instruction">
-                <p class="text mb-1">Determine the minimum GPA needed in future courses to raise or maintain your
-                    desired GPA level.</p>
-                <p class="result mb-1">Detailed Result</p>
-                <p class="text mb-1">Desired CGPA: 0.0</p>
-                <p class="text mb-1">Current CGPA: 0.0</p>
-                <p class="text mb-1">Additional Credits: 0</p>
-                <p class="text mb-1">Required GPA: 0.0</p>
-                <hr>
-                <p class="text mt-1">No remarks</p>
-            </div>
-        </section>
-    </div>
-    <section class="section-2">
-        <h1 class="bm-title mb-1">COMSATS GPA System</h1>
-        <p class="text mb-1">Understanding the grading system of your university is crucial for tracking your academic
-            progress and planning your studies effectively. For students at the COMSATS Institute of Information
-            Technology, the GPA system is a key component in measuring academic performance. This blog provides a
-            detailed explanation of the COMSATS GPA system, including the calculation methods and the grading scale.</p>
-        <h2 class="b-title mb-1">Absolute Grading System</h2>
-        <p class="text mb-1">COMSATS employs an absolute grading system to assess student performance. Unlike relative
-            grading systems, where grades are assigned based on a comparison with peers, the absolute grading system
-            awards grades based on predetermined thresholds. This ensures that students are evaluated strictly on their
-            individual performance.</p>
-        <h2 class="b-title mb-1">Breakdown of Marks</h2>
-        <p class="text mb-1">The GPA in each subject at COMSATS is calculated based on three main components:
-        <ol class="mb-1">
-            <li class="text"><b>Midterm Exams (25%): </b>Midterm exams are held midway through the semester and
-                contribute 25% to the final grade.</li>
-            <li class="text"><b>Quizzes and Assignment (25%): </b>Regular quizzes and assignments throughout the
-                semester make up another 25% of the final grade.</li>
-            <li class="text"><b>Final Exams(50%): </b>The final exams, held at the end of the semester, have the most
-                significant weight, contributing 50% to the final grade.</li>
-        </ol>
-        <p class="text mb-1">This distribution ensures a balanced evaluation, considering both continuous assessment and
-            performance in comprehensive exams.</p>
-        </p>
-        <h2 class="b-title mb-1">Grading Scale</h2>
-        <table class="text mb-1">
-        <tr>
-            <th>Marks</th>
-            <th>GPA</th>
-        </tr>
-        <tr>
-            <td>85 and above</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>80-84</td>
-            <td>3.66</td>
-        </tr>
-        <tr>
-            <td>75-79</td>
-            <td>3.33</td>
-        </tr>
-        <tr>
-            <td>70-74</td>
-            <td>3.00</td>
-        </tr>
-        <tr>
-            <td>66-69</td>
-            <td>2.66</td>
-        </tr>
-        <tr>
-            <td>60-65</td>
-            <td>2.33</td>
-        </tr>
-        <tr>
-            <td>55-59</td>
-            <td>2.00</td>
-        </tr>
-        <tr>
-            <td>51-54</td>
-            <td>1.33</td>
-        </tr>
-        <tr>
-            <td>50</td>
-            <td>1.00</td>
-        </tr>
-        <tr>
-            <td>0-49</td>
-            <td>0 (Fail)</td>
-        </tr>
-    </table>
-    <p class="text mb-1">These GPA values are awarded based on the percentage of marks obtained in a subject. For instance, scoring 85% or above in a subject will earn you a perfect GPA of 4.00 for that course.</p>
-    <h2 class="b-title mb-1">GPA and CGPA Calculation</h2>
-    
-    <p class="text">The Grade Point Average (GPA) for a semester is calculated using the following general formula:</p>
-    
-    <div class="formula">
-        <code>GPA = (&#x2211; (Grade Points * Credit Hours)) / (&#x2211; Credit Hours)</code>
-    </div>
-    
-    <p class="text mb-1">Where:</p>
-    <ul class="text mb-1">
-        <li>Grade Points are derived from the grading scale mentioned above.</li>
-        <li>Credit Hours refer to the number of hours assigned to each course.</li>
-    </ul>
-    
-    <p class="text">The Cumulative Grade Point Average (CGPA) is the weighted average of the GPA scores of all semesters completed so far. It is calculated using the formula:</p>
-    
-    <div class="formula">
-        <code>CGPA = (&#x2211; (GPA of each semester * Credit Hours of each semester)) / (&#x2211; Credit Hours of all semesters)</code>
-    </div>
-    
-    <p class="text mb-1">Both GPA and CGPA provide a comprehensive overview of a student’s academic performance, with the CGPA reflecting the overall performance across multiple semesters.</p>
-    
-    <h2 class="b-title mb-1">Conclusion</h2>
-    
-    <p class="text">Understanding the GPA system at COMSATS is essential for academic planning and performance tracking. The absolute grading system, combined with a clear breakdown of assessment components, ensures that students can focus on both continuous learning and final examinations. By maintaining a consistent performance across all components, students can achieve their desired GPA and CGPA, paving the way for academic success and future opportunities.</p>
-    </section>
+    </main>
     <footer>
         <div class="resolution">
-            <div class="quicklinks">
-                <!-- <div class="text">Quick Links</div> -->
                 <div class="links">
                     <div id="gpa-link" class="qt text">GPA Calculator</div>
-                    <div id="cgpa-link" class="qt text">CGPA Calculator</div>
+                    <div id="cgpa-link" class="qt text">GPA Planning Calculator</div>
                 </div>
-            </div>
-            <div class="footer-text text">Developed By <span class="qt"><a href="www.linkedin.com/in/najamulhassan3">Najam Ul Hassan</a></span></div>
+            <div class="footer-text text">Developed By <span class="qt"><a
+                        href="www.linkedin.com/in/najamulhassan3">Najam Ul Hassan</a></span></div>
         </div>
     </footer>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
