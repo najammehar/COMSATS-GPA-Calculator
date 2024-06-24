@@ -68,7 +68,7 @@ label {
     width: 100%;
     margin: 0 auto;
     min-height: calc(100vh - 280px);
-    background-image: url('/GPA Calculator/bg.jpg');
+    background-image: url('/bg.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 0 0 1.2rem 1.2rem;
