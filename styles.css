@@ -20,7 +20,9 @@ textarea::placeholder,
 select {
     font-family: 'Barlow Semi Condensed', sans-serif;
 }
-
+textarea{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
 label {
     color: white;
 }
