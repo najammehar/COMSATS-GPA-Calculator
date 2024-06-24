@@ -57,6 +57,9 @@ label {
 .mt-1 {
     margin-top: 1rem;
 }
+.grey{
+    color: rgba(0, 0, 0, 0.842);
+}
 
 /* Header Styling */
 .section-0 {
@@ -65,7 +68,7 @@ label {
     width: 100%;
     margin: 0 auto;
     min-height: calc(100vh - 280px);
-    background-image: url('/bg.jpg');
+    background-image: url('/GPA Calculator/bg.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 0 0 1.2rem 1.2rem;
@@ -130,7 +133,7 @@ label {
     justify-content: left;
     text-align: justify;
     color: white;
-    max-width: 40rem;
+    max-width: 35rem;
     margin-bottom: 4rem;
 }
 
